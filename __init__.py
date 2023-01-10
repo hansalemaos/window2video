@@ -1,6 +1,6 @@
+from shutil import copyfile
 from time import time, sleep
 import keyboard
-from FastCopyFast import copyfile
 from ctypes_screenshots import screencapture_window, list_windows
 from get_video_len import get_video_len_and_frames
 from list_files_with_timestats import get_folder_file_complete_path_limit_subdirs
@@ -68,7 +68,7 @@ def write_with_ffmpeg(foldername, allwrittenpics=None):
             oldpath = item.path
             print(newpath, end="\r")
             fname += 1
-            copyfile(oldpath, newpath, copystat=False)
+            copyfile(oldpath, newpath)
             allframescreated.append(newpath)
     oldwd = os.getcwd()
     os.chdir(outputfolder)
